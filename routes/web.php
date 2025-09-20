@@ -1,11 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QueueController;
+use App\Http\Controllers\RegisterController;
 
-Route::get('/queue-form', [QueueController::class, 'showForm']);
-Route::post('/process-queue', [QueueController::class, 'processForm']);
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register.form');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+// Optional: Dashboard route
